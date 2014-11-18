@@ -2,21 +2,16 @@
 
 var BB = BB || {};
 
-var BB.BilliardBallModule = (function(args){
+var BB.BilliardBallModule = (function(){
 
-  var init = function(radius, position, velocity){
-    // ... do initialization stuff
+  var _numBalls = 0;
+  
+  function BilliardBall(radius, position, velocity){
+    
+    _numBalls += 1;
   };
 
-  var _pos = {};
-  var _radius = "100px";
-  var _velocity = 0;
 
-
-
-  var _setRadius = function(radius){ 
-    this._ballRadius = parseInt(radius) + "px";
-  };
 
 
 
