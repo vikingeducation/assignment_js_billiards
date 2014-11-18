@@ -6,28 +6,24 @@ var BB.BilliardBallModule = (function(){
 
   var _numBalls = 0;
   
-  function BilliardBall(radius, position, velocity){
+  function BilliardBall(){
+    this.radius = 100;
+    this.position = {};
+    this.velocity = 0;
+    _numBalls += 1; //keep track of the number
+  };
+  
+  BilliardBall.prototype.render = function(){
     
-    _numBalls += 1;
   };
-
-
-
-
-
-  var publicFunc1 = function(){
-    // ... code, code, call privateFunc, code...
-  };
-  var publicProp1 = "val1";
-
-  var createBall = function(){
-
+  
+  function ballCount(){
+    return _numBalls;
   };
 
   return {
-    init: init,
-    publicFunc1: publicFunc1,
-    publicProp1: publicProp1,
+    BilliardBall : BilliardBall,
+    ballCount : ballCount;
   };
 }());
 
