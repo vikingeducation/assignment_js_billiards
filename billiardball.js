@@ -10,11 +10,7 @@ var BB.BilliardBallModule = (function(){
     this.radius = 100;
     this.position = {};
     this.velocity = 0;
-    _numBalls += 1; //keep track of the number
-  };
-  
-  BilliardBall.prototype.render = function(){
-    
+    _numBalls += 1; //keep track of the number created, for fun and profit
   };
   
   function ballCount(){
