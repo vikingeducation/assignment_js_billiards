@@ -7,8 +7,8 @@ BB.MainModule = (function(){
     //initialize each ball and push onto the table
     for(var i = 1; i <= numBalls; i++){
       var ball = new BB.BilliardBallModule.BilliardBall();
-      ball.position = { x: 300 };
-      ball.velocity = { x: 4 };
+      ball.position = { x: 200, y : 800 - (i * 200) }; //spread out billiardBalls vertically
+      ball.velocity = { x: 4, y: 0};
       BB.TableModule.addBall(ball);
     };
 
