@@ -36,13 +36,30 @@ BB.TableModule = (function(){
   };
 
   function _checkCollisions(){
-    balls.forEach(function(ball){
+    
+     balls.forEach(function(ball, index, array){
+      //wall collisions, horizontal only
       if ((ball.position['x'] + ball.radius) >= width ){
         ball.velocity['x'] *= -1;
       } else if ((ball.position['x'] - ball.radius <= 0)){
         ball.velocity['x'] *= -1;
       }
+      
+      //ball collisions, horizontal only
+      var otherBalls = array.splice(index, 1);
+      otherBalls.forEach(function(otherBall, index, array){
+        //to prevent double-counting, assumes ball is the one on the left, otherBall on right
+        if ((ball.position['x'] + ball.radius) >= otherBall.position['x'] - otherBall.radius)){
+          ball.velocity['x'] *= -1;
+          otherBall.velocity['x'] *= -1;
+        }
+      });
+      
     });
+    
+    
+    
+    
   }
 
   function tic(){
