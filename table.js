@@ -33,7 +33,7 @@ BB.TableModule = (function(){
     balls.forEach(function(ball, index){
       ball.render();
     });
-  };
+  }
 
   function _checkCollisions(){
     
@@ -49,16 +49,13 @@ BB.TableModule = (function(){
       var otherBalls = array.splice(index, 1);
       otherBalls.forEach(function(otherBall, index, array){
         //to prevent double-counting, assumes ball is the one on the left, otherBall on right
-        if ((ball.position['x'] + ball.radius) >= otherBall.position['x'] - otherBall.radius)){
+        if (ball.position['x'] + ball.radius >= otherBall.position['x'] - otherBall.radius){
           ball.velocity['x'] *= -1;
           otherBall.velocity['x'] *= -1;
         }
       });
       
     });
-    
-    
-    
     
   }
 
@@ -68,7 +65,7 @@ BB.TableModule = (function(){
     });
     _checkCollisions();
     this.render();
-  };
+  }
 
   return {
     init : init,
