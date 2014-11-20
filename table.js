@@ -50,8 +50,9 @@ BB.TableModule = (function(){
       otherBalls.forEach(function(otherBall, index, array){
         //to prevent double-counting, assumes ball is the one on the left, otherBall on right
         if (ball.position['x'] + ball.radius >= otherBall.position['x'] - otherBall.radius){
-          ball.velocity['x'] *= -1;
-          otherBall.velocity['x'] *= -1;
+          firstVel = ball.velocity['x'];
+          ball.velocity['x'] = otherBall.velocity['x'];
+          otherBall.velocity['x'] = firstVel;
         }
       });
       
