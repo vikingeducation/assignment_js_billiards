@@ -2,7 +2,7 @@
 //It should have properties like its total dimensions and an array of BilliardBalls it contains.
 var BB = BB || {};
 
-var BB.TableModule = (function(){
+BB.TableModule = (function(){
 
   //defaults to these if init isn't run
   var height = 600;
@@ -16,11 +16,41 @@ var BB.TableModule = (function(){
   };
   
   function ballCollection(){
-    return this.balls;
+    return balls;
   };
   
   function addBall(ball){
-    this.balls.push(ball);
+    balls.push(ball);
+  };
+
+  function render(){
+    $('#table').css({
+      'width' : this.width + 'px',
+      'height' : this.height + 'px'
+    });
+
+    $('#table').empty(); 
+    balls.forEach(function(ball, index){
+      ball.render();
+    });
+  };
+
+  function _checkCollisions(){
+    balls.forEach(function(ball){
+      if ((ball.position['x'] + ball.radius) >= width ){
+        ball.velocity['x'] *= -1;
+      } else if ((ball.position['x'] - ball.radius <= 0)){
+        ball.velocity['x'] *= -1;
+      }
+    });
+  }
+
+  function tic(){
+    balls.forEach(function(ball){
+      ball.tic();
+    });
+    _checkCollisions();
+    this.render();
   };
 
   return {
@@ -28,6 +58,8 @@ var BB.TableModule = (function(){
     ballCollection : ballCollection,
     addBall : addBall,
     height: height,
-    width : width
+    width : width,
+    render : render,
+    tic : tic
   };
 }());
