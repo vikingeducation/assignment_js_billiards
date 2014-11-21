@@ -35,7 +35,7 @@ POOL.BallModule = (function(){
     // if sqrt(Math.pow(ball.position.x - this.position.x, 2) + Math.pow(ball.position.y - this.position.y, 2)) < radius
     var that = this;
     this.table.balls.forEach(function(ball){
-      if(that !== ball && Math.sqrt(Math.pow(ball.position.x - that.position.x, 2) + Math.pow(ball.position.y - that.position.y, 2)) <= 2*_radius)
+      if(that !== ball && Math.sqrt(Math.pow(ball.position.x - that.position.x, 2) + Math.pow(ball.position.y - that.position.y, 2)) <= _radius+ball.radius)
         { var starting = {x: that.vector.x, y: that.vector.y};
           that.vector.x = ball.vector.x;
           that.vector.y = ball.vector.y;
