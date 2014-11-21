@@ -34,10 +34,12 @@ BB.TableModule = (function(){
       ball.render();
     });
   }
-
-  function _checkCollisions(){
+  
+  
+  
+ function _checkCollisions(){
     
-     balls.forEach(function(ball, index, array){
+     balls.forEach(function(ball, index, billiardBalls){
       //wall collisions, horizontal only
       if ((ball.position['x'] + ball.radius) >= width ){
         ball.velocity['x'] *= -1;
@@ -46,12 +48,13 @@ BB.TableModule = (function(){
       }
       
       //ball collisions, horizontal only
-      var otherBalls = array.splice(index, 1);
-      otherBalls.forEach(function(otherBall, index, array){
-        //to prevent double-counting, assumes ball is the one on the left, otherBall on right
-        if (ball.position['x'] + ball.radius >= otherBall.position['x'] - otherBall.radius){
+      billiardBalls.forEach(function(otherBall, otherIndex){
+      //switch velocities if two balls get within each other's radius
+      //safe for counting self because nothing would change
+			 if (ball.position['x'] < otherBall.position['x'] + otherBall.radius &&
+   ball.position['x'] + ball.radius > otherBall.position['x']) {
           firstVel = ball.velocity['x'];
-          ball.velocity['x'] = otherBall.velocity['x'];
+          ball.velocity['x'] = otherBall.velocity['x']; 
           otherBall.velocity['x'] = firstVel;
         }
       });
@@ -59,6 +62,7 @@ BB.TableModule = (function(){
     });
     
   }
+    
 
   function tic(){
     balls.forEach(function(ball){
