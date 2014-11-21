@@ -24,7 +24,7 @@ BB.MainModule = (function(){
 }());
 
 $(document).ready(function(){
-  BB.MainModule.init(3);
+  BB.MainModule.init(4);
   BB.TableModule.render();
 
   setInterval(function(){
