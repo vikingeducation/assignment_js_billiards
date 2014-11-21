@@ -12,6 +12,7 @@ BB.BilliardBallModule = (function(){
     this.position = {};
     this.velocity = { x: 0,
                       y: 0 };
+    this.rgbColor = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
     numBalls += 1; //keep track of the number created, for fun and profit
   };
   
@@ -22,7 +23,8 @@ BB.BilliardBallModule = (function(){
       bottom: (this.position["y"] - this.radius) + "px",
       left : (this.position["x"] - this.radius) + "px",
       height: (2*this.radius) + "px",
-      width: (2*this.radius) + "px"
+      width: (2*this.radius) + "px",
+      "background-color" : this.rgbColor
     });
     $('#table').append($ballDiv);
   };
