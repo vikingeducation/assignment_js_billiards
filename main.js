@@ -7,8 +7,10 @@ BB.MainModule = (function(){
     //initialize each ball and push onto the table
     for(var i = 1; i <= numBalls; i++){
       var ball = new BB.BilliardBallModule.BilliardBall();
-      ball.position = { y: 300, x : 800 - (i * 200) }; //spread out billiardBalls vertically
-      ball.velocity = { x: (i * 2), y: 0}; //vary speeds
+ 
+
+      ball.position = { y: 400, x : 800 - (i * 125) }; //spread out billiardBalls vertically
+      ball.velocity = { x: Math.floor(Math.random()* 7) - 5, y: 0}; //vary speeds
       BB.TableModule.addBall(ball);
     };
 
@@ -22,7 +24,7 @@ BB.MainModule = (function(){
 }());
 
 $(document).ready(function(){
-  BB.MainModule.init(1);
+  BB.MainModule.init(3);
   BB.TableModule.render();
 
   setInterval(function(){
