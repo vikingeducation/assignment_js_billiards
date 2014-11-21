@@ -12,15 +12,15 @@ POOL.MainModule = (function(){
 
   function _buildBilliardBalls(quantity){
     for(var i = 0; i < quantity; i++){
-      var ball = new POOL.BallModule.Ball({x: 500, y: 500}, {x: 3, y: 3}, _table);
+      var ball = new POOL.BallModule.Ball({x: Math.floor((Math.random() * (_table.width-60)) + 30), y: Math.floor((Math.random() * (_table.height-60)) + 30)}, {x: Math.floor(5 - (Math.random() * 10)), y: Math.floor(5 - (Math.random() * 10))}, _table);
       _table.balls.push(ball);
       $('.table').append(ball.ball);
     }
   }
 
   function _movement(){
-    _ballMovement();
     _renderBalls();
+    _ballMovement();
   }
 
   function _gameLoop(){

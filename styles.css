@@ -1,12 +1,10 @@
 .table {
-  height: 1000px;
-  width: 1000px;
   border: 1px solid black;
   background: white;
 }
 
 .ball {
-  position: relative;
+  position: absolute;
   border-radius: 50%;
   background: black;
 }

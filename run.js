@@ -1,3 +1,3 @@
 $(document).ready(function(){
-  POOL.MainModule.init(1);
+  POOL.MainModule.init(5);
 });
