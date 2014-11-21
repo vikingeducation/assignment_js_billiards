@@ -51,8 +51,8 @@ BB.TableModule = (function(){
       billiardBalls.forEach(function(otherBall, otherIndex){
       //switch velocities if two balls get within each other's radius
       //safe for counting self because nothing would change
-			 if (ball.position['x'] < otherBall.position['x'] + otherBall.radius &&
-   ball.position['x'] + ball.radius > otherBall.position['x']) {
+      if (ball.position['x'] + ball.radius < otherBall.position['x'] + otherBall.radius &&
+   ball.position['x'] + ball.radius > otherBall.position['x'] - otherBall.radius) {
           firstVel = ball.velocity['x'];
           ball.velocity['x'] = otherBall.velocity['x']; 
           otherBall.velocity['x'] = firstVel;
