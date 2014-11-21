@@ -1,0 +1,11 @@
+.table {
+  border: 1px solid black;
+  background: white;
+  position: absolute;
+}
+
+.ball {
+  position: absolute;
+  border-radius: 50%;
+  background: black;
+}

@@ -1,4 +1,4 @@
 assignment_js_billiards
 =======================
 
-rack-em and clack-em!
+[Example](http://htmlpreview.github.io/?https://github.com/LaMarseillaise/assignment_js_billiards/blob/master/pool.html)
