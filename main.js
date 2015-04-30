@@ -5,10 +5,27 @@ function BilliardBall(x,y){
     x: x,
     y: y
   };
-  this.velx = -0.2;
-  this.vely = 0.5;
+
+  //set x direction
+  if (Math.floor((Math.random() * 10) + 1) > 5){
+    xDir = 1;
+  } else {
+    xDir = -1;
+  }
+
+
+  //set y direction
+  if (Math.floor((Math.random() * 10) + 1) > 5){
+    yDir = 1;
+  } else {
+    yDir = -1;
+  }
+
+  this.velx = Math.floor((Math.random() * 10) + 1) * xDir;
+  this.vely = Math.floor((Math.random() * 10) + 1) * yDir;
 }
 
+  //apply velocity to billiard ball
 BilliardBall.prototype.tic = function(){
   this.center.x += this.velx;
   this.center.y += this.vely;
@@ -24,9 +41,8 @@ BilliardBall.prototype.tic = function(){
 $( document ).ready(function() {
   //stuff
 
+  theBall = new BilliardBall(400, 250);
 
-
-  theBall = new BilliardBall(400, 250)
   setInterval(function(){
     theBall.tic();
     $leftTime = theBall.center.x
@@ -34,5 +50,5 @@ $( document ).ready(function() {
     $( '#billiard-ball' ).css({"margin-left": $leftTime, "margin-top": $vertTime});
     console.log("x coordinate is" + theBall.center.x);
     console.log("y coordinate is" + theBall.center.y);
-  }, 40);
+  }, 80);
 });
