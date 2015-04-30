@@ -5,8 +5,8 @@ function BilliardBall(x,y){
     x: x,
     y: y
   };
-  this.velx = 2;
-  this.vely = 3;
+  this.velx = -0.2;
+  this.vely = 0.5;
 }
 
 BilliardBall.prototype.tic = function(){
@@ -23,10 +23,16 @@ BilliardBall.prototype.tic = function(){
 
 $( document ).ready(function() {
   //stuff
-  theBall = new BilliardBall(300, 300)
+
+
+
+  theBall = new BilliardBall(400, 250)
   setInterval(function(){
     theBall.tic();
+    $leftTime = theBall.center.x
+    $vertTime = theBall.center.y
+    $( '#billiard-ball' ).css({"margin-left": $leftTime, "margin-top": $vertTime});
     console.log("x coordinate is" + theBall.center.x);
     console.log("y coordinate is" + theBall.center.y);
-  }, 4000);
+  }, 40);
 });
