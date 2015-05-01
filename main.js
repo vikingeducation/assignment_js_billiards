@@ -3,7 +3,7 @@ function BilliardBall(x,y){
 
   //not currently using radius, need to apply it
   //need random color generation
-  this.radius = 40;
+  this.radius = 10;
   this.center = {
     x: x,
     y: y
@@ -30,11 +30,6 @@ BilliardBall.prototype.tic = function(){
   this.center.y += this.vely;
 }
 
-
-
-  //need function for random velocity
-
-
 //kicks it off
 
 $( document ).ready(function() {
@@ -47,8 +42,9 @@ $( document ).ready(function() {
     theBall.tic();
     $leftTime = theBall.center.x
     $vertTime = theBall.center.y
+    $size = theBall.radius * 2
 
-    $( '#billiard-ball' ).css({"margin-left": $leftTime, "margin-top": $vertTime});
+    $( '#billiard-ball' ).css({"margin-left": $leftTime, "margin-top": $vertTime, "height": $size, "width": $size});
 
     // console.log("x coordinate is" + theBall.center.x);
     // console.log("y coordinate is" + theBall.center.y);
