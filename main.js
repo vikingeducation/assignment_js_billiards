@@ -1,25 +1,21 @@
 
 function BilliardBall(x,y){
-  this.radius = 100;
+  this.radius = 40;
   this.center = {
     x: x,
     y: y
   };
 
-  //set x direction
-  if (Math.floor((Math.random() * 10) + 1) > 5){
-    xDir = 1;
-  } else {
-    xDir = -1;
+  function forwardOrBack(){
+    if (Math.floor((Math.random() * 10) + 1) > 5){
+      return 1;
+    } else {
+      return -1;
+    }
   }
 
-
-  //set y direction
-  if (Math.floor((Math.random() * 10) + 1) > 5){
-    yDir = 1;
-  } else {
-    yDir = -1;
-  }
+  var xDir = forwardOrBack();
+  var yDir = forwardOrBack();
 
   this.velx = Math.floor((Math.random() * 10) + 1) * xDir;
   this.vely = Math.floor((Math.random() * 10) + 1) * yDir;
