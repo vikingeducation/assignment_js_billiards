@@ -1,5 +1,8 @@
 
 function BilliardBall(x,y){
+
+  //not currently using radius, need to apply it
+  //need random color generation
   this.radius = 40;
   this.center = {
     x: x,
@@ -7,7 +10,7 @@ function BilliardBall(x,y){
   };
 
   function forwardOrBack(){
-    if (Math.floor((Math.random() * 10) + 1) > 5){
+    if (Math.random() > 0.5){
       return 1;
     } else {
       return -1;
@@ -36,6 +39,7 @@ BilliardBall.prototype.tic = function(){
 
 $( document ).ready(function() {
   //stuff
+  TableModule.init();
 
   theBall = new BilliardBall(400, 250);
 
@@ -43,8 +47,10 @@ $( document ).ready(function() {
     theBall.tic();
     $leftTime = theBall.center.x
     $vertTime = theBall.center.y
+
     $( '#billiard-ball' ).css({"margin-left": $leftTime, "margin-top": $vertTime});
-    console.log("x coordinate is" + theBall.center.x);
-    console.log("y coordinate is" + theBall.center.y);
+
+    // console.log("x coordinate is" + theBall.center.x);
+    // console.log("y coordinate is" + theBall.center.y);
   }, 80);
 });
