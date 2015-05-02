@@ -1,4 +1,5 @@
-//formulate and place pockets
+//solve error tablemodule
+//fix pockets css
 //make bounce off walls
 
 

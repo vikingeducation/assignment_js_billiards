@@ -16,7 +16,6 @@ var TableModule = (function(args){
     // renders table
     _renderTable();
     _renderBalls();
-    _renderPockets();
 
   }
 
@@ -24,6 +23,7 @@ var TableModule = (function(args){
   //private
   _renderTable = function(){
     $("#container").append("<div id='billiard-table'></div>");
+    _renderPockets();
   }
 
   _renderBalls = function(){

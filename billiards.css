@@ -8,15 +8,18 @@
 }
 
 #container{
-  width: 100%;
-  height: 100%;
+  margin-left:auto;
+  margin-right:auto;
+  width: 640px;
+  height: 350px;
 }
 
 #billiard-table{
+  position: relative;
   width: 640px;
   height: 350px;
   background-color: #0a6c03;
-  border: 10px solid brown;
+  border: 15px solid brown;
   border-radius: 44px;
   margin-left: auto;
   margin-right: auto;
@@ -33,40 +36,52 @@
 
 
 #one{
-  border-top-right-radius: 5px;
-  margin-bottom: 0px;
-  margin-left: 0px;
+  border-top-right-radius: 14px;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  border-bottom-left-radius: 9px;
 }
 
 #two{
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 0px;
+  left: 48%;
+  position: absolute;
+  bottom: -11px;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
 }
 
 #three{
+  right: 0px;
+  position: absolute;
+  bottom: 0px;
+  border-bottom-right-radius: 9px;
+  border-top-left-radius: 14px;
 
-  border-top-left-radius: 5px;
-  margin-right: 0px;
-  margin-bottom: 0px;
 
 }
 
 #four{
-
-  border-bottom-right-radius: 5px;
+  position: absolute;
+  border-top-left-radius: 9px;
+  border-bottom-right-radius: 14px;
 
 }
 
 #five{
-
-  margin-left: auto;
-  margin-right: auto;
+  position: absolute;
+  left: 48%;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  top: -11px;
 
 }
 
 #six{
-  margin-right: 0px;
-  border-bottom-left-radius: 5px;
+  position: absolute;
+  border-bottom-left-radius: 14px;
+  right: 0px;
+  border-top-right-radius: 9px;
+
 }
 
