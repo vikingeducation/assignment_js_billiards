@@ -16,17 +16,22 @@ var TableModule = (function(args){
     // renders table
     _renderTable();
     _renderBalls();
+    _renderPockets;
 
   }
 
 
   //private
   _renderTable = function(){
-    $("#container")[0].innerHTML = "<div id='billiard-table'>OH HAI</div>";
+    $("#container").append("<div id='billiard-table'></div>");
   }
 
   _renderBalls = function(){
-    $("#billiard-table")[0].innerHTML = "<div id='billiard-ball'></div>";
+    $("#billiard-table").append("<div id='billiard-ball'></div>");
+  }
+
+  _renderPockets = function(){
+    $("#billiard-table").append("<div class='pocket' id='one'></div><div class='pocket' id='two'></div><div class='pocket' id='three'></div><div class='pocket' id='four'></div><div class='pocket' id='five'></div><div class='pocket' id='six'></div>");
   }
 
   return publicObject;

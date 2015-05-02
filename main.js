@@ -1,3 +1,6 @@
+//formulate and place pockets
+//make bounce off walls
+
 
 function BilliardBall(x,y){
 
