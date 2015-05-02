@@ -16,7 +16,7 @@ var TableModule = (function(args){
     // renders table
     _renderTable();
     _renderBalls();
-    _renderPockets;
+    _renderPockets();
 
   }
 
